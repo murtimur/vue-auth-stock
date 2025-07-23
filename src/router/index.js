@@ -4,6 +4,7 @@ import Login from '@/views/login/Login.vue'
 import Home from '@/views/home/Home.vue'
 import Processes from '@/views/processes/Processes.vue'
 import Fatura from '@/views/fatura/Fatura.vue'
+import { useAuthStore } from '@/stores/auth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,16 @@ const router = createRouter({
       component: Fatura,
     },
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  const publicPages = ['login', 'settings']
+  const authStore = useAuthStore()
+  const isAuthenticated = authStore.auth && Object.keys(authStore.auth).length > 0
+  if (!publicPages.includes(String(to.name)) && !isAuthenticated) {
+    return next({ name: 'login' })
+  }
+  next()
 })
 
 export default router
