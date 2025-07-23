@@ -1,0 +1,157 @@
+$primary: #056ba6;
+$success: #c9265c;
+$info: #07305c;
+$warning: #ffd552;
+$secondary: #075632;
+$danger: rgb(177, 28, 5);
+$border-width: 2px;
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+.card {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgb(0, 0, 0);
+}
+
+.btn {
+  box-shadow: 1px 1px black;
+  transform: translate(-3px, -3px);
+  transition: unset;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: white;
+
+  &:hover {
+    color: white;
+  }
+
+  &:active {
+    box-shadow: 1px 1px white;
+    transform: translate(-1px, -1px);
+  }
+
+  &:disabled {
+    box-shadow: unset;
+    transform: unset;
+  }
+}
+
+.navbar a {
+  &:hover {
+    text-shadow: 1px 1px black;
+    transform: translate(-2px, -2px);
+  }
+}
+
+.navbar {
+  border-bottom: 2px solid black;
+}
+
+.nav-item span {
+  cursor: pointer;
+  &:hover {
+    text-shadow: 2px 2px black;
+    transform: translate(-2px, -2px);
+  }
+}
+
+.no-outline {
+  resize: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.editor-base {
+  height: calc(100vh - 75px);
+}
+
+.editor-error {
+  border: 0;
+  border-bottom: 1px solid var(--bs-danger);
+}
+
+p.markdown img {
+  width: 100vw;
+  max-width: 100%;
+}
+
+.toast-wrapper {
+  max-width: 200px;
+  right: 20px;
+  top: 75px;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.navbar .dropdown-item {
+  &:hover {
+    transform: unset;
+    text-shadow: unset;
+  }
+}
+.material-symbols-outlined.action {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    text-shadow: 2px 2px var(--bs-secondary);
+    transform: translate(-2px, -2px);
+  }
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(224, 237, 239);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 15px solid;
+  border-color: #4c7c9a transparent #4c7c9a transparent;
+  border-radius: 50%;
+  animation: spin 1.7s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+  }
+
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 1.5rem;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

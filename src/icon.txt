@@ -1,0 +1,13 @@
+/**
+ *
+ * <v-icon name="FaSpinner" animation="spin" />
+Desteklenen animation değerleri:
+"spin" → sürekli döner
+
+"pulse" → yavaş yavaş döner (daha yumuşak)
+
+"bounce" → yukarı-aşağı zıplar (eğer destekliyorsa)
+
+"shake" → sağa sola titrer
+ *
+ */

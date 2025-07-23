@@ -1,0 +1,10 @@
+@import './base.css';
+
+li:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
+li:nth-child(even) {
+  background-color: #e3f2fd;
+  color: black;
+}
